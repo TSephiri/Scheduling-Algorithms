@@ -53,11 +53,24 @@ namespace FCFS
             dataGridInit();
         }
 
-
+        //initialise grid with total burst time;
         private void dataGridInit()
         {
+            //creating process name column
+            DataGridViewTextBoxColumn columnName = new DataGridViewTextBoxColumn();
+            columnName.ReadOnly = true;
+            columnName.Name = "Process";
+            columnName.Resizable = DataGridViewTriState.False;
+            //column1.SortMode = DataGridViewColumnSortMode.Automatic;
+            columnName.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            columnName.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            columnName.HeaderText =  "Process";
+            columnName.Width = 100;
+
+            //adding column to dataGridView
+            dataGridView1.Columns.Add(columnName);
             //creating new columns
-            for(int i = 1; i <= totalBurst; i++) { 
+            for (int i = 1; i <= totalBurst; i++) { 
                 DataGridViewTextBoxColumn column1 = new DataGridViewTextBoxColumn();
                 column1.ReadOnly = true;
                 column1.Name = i+"";
