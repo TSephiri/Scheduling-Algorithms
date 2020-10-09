@@ -51,6 +51,7 @@ namespace FCFS
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             dataGridInit();
+            initRows();
         }
 
         //initialise grid with total burst time;
@@ -85,10 +86,30 @@ namespace FCFS
                 dataGridView1.Columns.Add(column1);
             }
         }
-        //private List<Person> getProcesses(){
+        //init rows in grid based on processes
+        private void initRows()
+        {
+            foreach (Process p in processList)
+            {
+                dataGridView1.Rows.Add(p.name);
+            }
+        }
+        
+        private void displayInGrid()
+        {
+            List<Process> tempList = processList;
+            int min = 0;
+            int index = 0;
+            foreach(Process p in tempList){
+                if (p.arrivalTime < min)
+                {
+                    min = p.arrivalTime;
+                    index = tempList.IndexOf(p);
+                    
+                }  
+            }
+        }
 
-        //    return;
-        //}
 
     }
 }
