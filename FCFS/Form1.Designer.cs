@@ -60,6 +60,7 @@
             this.btnSubmit.TabIndex = 1;
             this.btnSubmit.Text = "Submit all";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // label1
             // 
@@ -145,6 +146,7 @@
             // 
             // txtDisplay
             // 
+            this.txtDisplay.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtDisplay.Location = new System.Drawing.Point(490, 12);
             this.txtDisplay.Multiline = true;
             this.txtDisplay.Name = "txtDisplay";
